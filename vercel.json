@@ -11,6 +11,7 @@
   },
   "installCommand": "composer install --prefer-dist --no-dev --no-ansi --no-progress --no-interaction",
   "buildCommand": "npm install && npm run build",
+  "outputDirectory": "public",
   "routes": [
     {
       "src": "/(favicon\\.ico|robots\\.txt)",

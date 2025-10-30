@@ -3,10 +3,7 @@
   "functions": {
     "api/index.php": {
       "runtime": "vercel-php@0.6.1",
-      "includeFiles": [
-        "public/**",
-        "storage/**"
-      ]
+      "includeFiles": "public/**/*"
     }
   },
   "installCommand": "composer install --prefer-dist --no-dev --no-ansi --no-progress --no-interaction",

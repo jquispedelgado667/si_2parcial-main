@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "functions": {
+    "api/index.php": {
+      "runtime": "vercel-php@0.6.1",
+      "includeFiles": [
+        "public/**",
+        "storage/**"
+      ]
+    }
+  },
+  "installCommand": "composer install --prefer-dist --no-dev --no-ansi --no-progress --no-interaction",
+  "buildCommand": "npm install && npm run build",
+  "routes": [
+    {
+      "src": "/(favicon\\.ico|robots\\.txt)",
+      "dest": "/public/$1"
+    },
+    {
+      "src": "/(.*\\.(?:css|js|json|png|jpg|jpeg|gif|svg|webp|woff|woff2|ttf|eot|map))",
+      "dest": "/public/$1"
+    },
+    { "src": "/build/(.*)", "dest": "/public/build/$1" },
+    { "src": "/storage/(.*)", "dest": "/public/storage/$1" },
+    { "src": "/(.*)", "dest": "/api/index.php" }
+  ]
+}

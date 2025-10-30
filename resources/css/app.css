@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	body {
+		@apply bg-slate-950 text-slate-100 antialiased;
+		background-image: radial-gradient(circle at 0% 0%, rgba(56, 244, 189, 0.28), transparent 40%),
+			radial-gradient(circle at 100% 0%, rgba(255, 145, 64, 0.25), transparent 45%),
+			radial-gradient(circle at 100% 100%, rgba(17, 94, 89, 0.35), transparent 35%);
+		background-attachment: fixed;
+	}
+
+	::selection {
+		@apply bg-aurora-400 text-slate-900;
+	}
+
+	input[type="text"],
+	input[type="email"],
+	input[type="number"],
+	input[type="password"],
+	input[type="tel"],
+	input[type="date"],
+	input[type="search"],
+	input[type="url"],
+	textarea,
+	select,
+	.form-input {
+		background-color: rgba(248, 250, 252, 0.95);
+		border: 1px solid rgba(94, 234, 212, 0.4);
+		color: #0f172a !important;
+		caret-color: #0f172a;
+		font-weight: 600;
+		border-radius: 18px;
+		padding: 0.75rem 1rem;
+		box-shadow: inset 0 1px 3px rgba(2, 6, 23, 0.35);
+		transition: border 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+	}
+
+	input::placeholder,
+	textarea::placeholder,
+	.form-input::placeholder {
+		color: rgba(51, 65, 85, 0.72);
+	}
+
+	select {
+		padding-right: 2.75rem;
+		background-image: none;
+	}
+
+	input:focus,
+	textarea:focus,
+	select:focus {
+		border-color: rgba(94, 234, 212, 0.85);
+		box-shadow: 0 0 0 3px rgba(94, 234, 212, 0.2);
+		transform: translateY(-1px);
+		outline: none;
+	}
+
+	input:disabled,
+	textarea:disabled,
+	select:disabled {
+		opacity: 0.6;
+		cursor: not-allowed;
+	}
+
+	label {
+		color: rgba(226, 232, 240, 0.85);
+	}
+
+	input:-webkit-autofill,
+	input:-webkit-autofill:hover,
+	input:-webkit-autofill:focus,
+	textarea:-webkit-autofill,
+	textarea:-webkit-autofill:hover,
+	textarea:-webkit-autofill:focus,
+	select:-webkit-autofill,
+	select:-webkit-autofill:hover,
+	select:-webkit-autofill:focus {
+		box-shadow: 0 0 0 1000px rgba(248, 250, 252, 0.95) inset;
+		-webkit-text-fill-color: #000000;
+		transition: background-color 5000s ease-in-out 0s;
+	}
+
+	.bg-white {
+		background-color: rgba(15, 23, 42, 0.82) !important;
+		color: #e2e8f0;
+	}
+
+	.bg-gray-100,
+	.bg-gray-50 {
+		background-color: rgba(3, 7, 18, 0.75) !important;
+	}
+
+	.text-gray-900,
+	.text-gray-800 {
+		color: #f8fafc !important;
+	}
+
+	.text-gray-700,
+	.text-gray-600 {
+		color: rgba(226, 232, 240, 0.78) !important;
+	}
+
+	.border-gray-200,
+	.border-gray-100 {
+		border-color: rgba(148, 163, 184, 0.25) !important;
+	}
+
+	.shadow-sm,
+	.shadow,
+	.shadow-xl {
+		box-shadow: 0 24px 45px rgba(8, 47, 35, 0.35) !important;
+	}
+}
+
+@layer components {
+	.surface-card {
+		@apply bg-slate-900/70 backdrop-blur border border-slate-700/60 shadow-glow rounded-3xl;
+	}
+
+	.surface-panel {
+		@apply bg-slate-900/60 border border-slate-700/50 rounded-2xl shadow-lg;
+	}
+
+	.btn-brand {
+		@apply inline-flex items-center justify-center gap-2 rounded-xl bg-brand-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-brand-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-300 disabled:opacity-60 disabled:cursor-not-allowed;
+	}
+
+	.btn-ghost {
+		@apply inline-flex items-center justify-center gap-2 rounded-xl border border-aurora-400/60 px-4 py-2 text-sm font-semibold text-aurora-200 transition hover:bg-aurora-400/10 hover:border-aurora-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-aurora-200;
+	}
+
+	.badge-pill {
+		@apply inline-flex items-center gap-1 rounded-full bg-aurora-500/20 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-aurora-100;
+	}
+}

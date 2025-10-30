@@ -6,8 +6,8 @@
       "includeFiles": "public/**/*"
     }
   },
-  "installCommand": "curl -fsSL https://getcomposer.org/installer | php && php composer.phar install --prefer-dist --no-dev --no-ansi --no-progress --no-interaction",
-  "buildCommand": "npm install && npm run build",
+  "installCommand": "npm install",
+  "buildCommand": "npm run build",
   "outputDirectory": "public",
   "routes": [
     {
